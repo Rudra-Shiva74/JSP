@@ -1,0 +1,26 @@
+package mvc.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import jakarta.servlet.annotation.WebServlet;
+
+public class DBConnection {
+	public static Connection createConnection() {
+		Connection con = null;
+		String url = "jdbc:mysql://localhost:3306/youtube"; 
+		String username = "root"; 
+		String password = "ShivaRudra@7488"; 
+
+		try {
+			if (con == null) {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				con = DriverManager.getConnection(url, username, password);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		return con;
+	}
+}

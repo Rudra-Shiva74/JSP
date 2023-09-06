@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
+  <servlet>
+    <description></description>
+    <display-name>Req</display-name>
+    <servlet-name>Req</servlet-name>
+    <servlet-class>com.servlet.Req</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Req</servlet-name>
+    <url-pattern>/Req</url-pattern>
+  </servlet-mapping>
+  <display-name>Check2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Send</display-name>
+    <servlet-name>Send</servlet-name>
+    <servlet-class>com.servlet.Send</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Send</servlet-name>
+    <url-pattern>/Send</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Abhishek</display-name>
+    <servlet-name>Abhishek</servlet-name>
+    <servlet-class>com.servlet.Abhishek</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Abhishek</servlet-name>
+    <url-pattern>/Abhishek</url-pattern>
+  </servlet-mapping>
+</web-app>

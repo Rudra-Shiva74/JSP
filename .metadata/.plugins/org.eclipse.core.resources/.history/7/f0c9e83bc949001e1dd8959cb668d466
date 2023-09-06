@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Here</title>
+</head>
+<body>
+	<form action="Abhishek" method="post">
+		<input type="number" placeholder="Enter Your FirstNumbar"
+			name="num1" /> <input type="number"
+			placeholder="Enter Your SecondNumbar" name="num2" /> <input
+			type="submit" value="Add" name="action" /> <input type="submit"
+			value="Substract" name="action" /> <input type="submit"
+			value="Division" name="action" /> <input type="submit"
+			value="Multiplication" name="action" /> <input type="submit"
+			value="Modules" name="action" />
+	</form>
+</body>
+</html>

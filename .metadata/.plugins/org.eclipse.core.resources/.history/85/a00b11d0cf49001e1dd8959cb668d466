@@ -1,0 +1,59 @@
+package mvc.controller;
+
+import mvc.bean.RegisterBean;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import mvc.dao.RegisterDao;
+import mvc.util.DBConnection;
+
+@MultipartConfig
+@WebServlet("/RegisterServlet")
+public class RegisterServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+
+		PrintWriter out = response.getWriter();
+		// Copying all the input parameters in to local variables
+		String fullName = request.getParameter("fullname");
+		String email = request.getParameter("email");
+		String userName = request.getParameter("username");
+		String password = request.getParameter("password");
+		String cpass = request.getParameter("conpassword");
+		if (cpass.equals(password)) {
+
+			RegisterBean registerBean = new RegisterBean();
+			// Using Java Beans - An easiest way to play with group of related data
+			registerBean.setFullName(fullName);
+			registerBean.setEmail(email);
+			registerBean.setUserName(userName);
+			registerBean.setPassword(password);
+
+			RegisterDao registerDao = new RegisterDao(DBConnection.createConnection());
+			String userRegistered = registerDao.registerUser(registerBean);
+
+			if (userRegistered.equals("SUCCESS")) 
+			{
+				out.print("DONE");
+			} else if (userRegistered.equals("UNSUCCESS")) 
+			{
+				out.print("User already exist!");
+			}
+
+		} else {
+			out.print("Password not Match!");
+		}
+	}
+}
